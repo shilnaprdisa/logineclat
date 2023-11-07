@@ -5,6 +5,7 @@ import seaborn as sns
 import requests
 import csv
 from io import StringIO
+# HAI INI PERCOBAAN
 github_url = 'https://raw.githubusercontent.com/shilnaprdisa/dataskripsi/main/datasetfix23.csv'
 # Membaca file CSV dari URL
 data = pd.read_csv(github_url)
