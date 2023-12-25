@@ -1,0 +1,273 @@
+{% extends 'layout.html'%}{%block title %} Home {% endblock %}{%block content%}
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-lg-6 align-self-center">
+            <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+              <div class="row">
+                <div class="col-lg-4 col-sm-4">
+                  <div class="info-stat">
+                    <h6>Upload File</h6>
+                    <h4>Format CSV</h4>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                  <div class="info-stat">
+                    <h6>Process</h6>
+                    <h4>Eclat Method</h4>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-4">
+                  <div class="info-stat">
+                    <h6>Result</h6>
+                    <h4>Association Rules</h4>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <h2>Sistem Tools Penentuan Paket Promo Barang Menggunakan Algoritma ECLAT</h2>
+                </div>
+                <div class="col-lg-12">
+                  <div class="main-green-button scroll-to-section"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+              <img src="{{ url_for('static', filename='assets/images/banner-right-image.png') }}" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%if session['name']%}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="section-heading wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
+        <h2>Bagaimana Cara Menggunakan <span>EclaTools?</span></h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="features" class="features section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="features-content">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="features-item first-feature-1 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+                <div class="first-number number">
+                  <h6>01</h6>
+                </div>
+                <div class="icon"></div>
+                <h4>Upload CSV File</h4>
+                <div class="line-dec"></div>
+                <p>EclaTools Hanya dapat memproses file CSV, Pastikan File yang kamu Upload Memiliki Kolom Item, Transaction, dan Kuantitas</p>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="features-item second-feature-2 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+                <div class="second-number number">
+                  <h6>02</h6>
+                </div>
+                <div class="icon"></div>
+                <h4>Klik Proses</h4>
+                <div class="line-dec"></div>
+                <p>Tunggu proses perhitungan,EclaTools akan Memproses Datamu!</p>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="features-item first-feature-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+                <div class="third-number number">
+                  <h6>03</h6>
+                </div>
+                <div class="icon"></div>
+                <h4>Hasil Perhitungan</h4>
+                <div class="line-dec"></div>
+                <p>EclaTools Akan memunculkan hasil perhitungan paket promo barang</p>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="features-item second-feature-4 last-features-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+                <div class="fourth-number number">
+                  <h6>04</h6>
+                </div>
+                <div class="icon"></div>
+                <h4>Download Hasil Analisis</h4>
+                <div class="line-dec"></div>
+                <p>Hasil Analisis dapat didownload dengan format file CSV/Pdf</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="skills-content">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                <div class="progress" data-percentage="80">
+                  <span class="progress-left">
+                    <span class="progress-bar"></span>
+                  </span>
+                  <span class="progress-right">
+                    <span class="progress-bar"></span>
+                  </span>
+                  <div class="progress-value">
+                    <div>
+                      80%<br />
+                      <span>Python</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="skill-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                <div class="progress" data-percentage="60">
+                  <span class="progress-left">
+                    <span class="progress-bar"></span>
+                  </span>
+                  <span class="progress-right">
+                    <span class="progress-bar"></span>
+                  </span>
+                  <div class="progress-value">
+                    <div>
+                      20%<br />
+                      <span>HTML/CSS</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="services" class="our-services section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="section-heading wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
+          <h6>Tentang Eclatools</h6>
+          <h2>Penjelasan &amp; <span> Fitur</span> <em>EclaTools </em></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="icon">
+                <img src="{{ url_for('static', filename='assets/images/service-icon-01.png') }}" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="right-content">
+                <h4>Eclat</h4>
+                <p>Algoritma ECLAT (Equivalence Class Transformation) adalah algoritma pencarian pola yang digunakan dalam data mining dan analisis asosiasi.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="icon">
+                <img src="{{ url_for('static', filename='assets/images/service-icon-02.png') }}" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="right-content">
+                <h4>Nilai Support</h4>
+                <p>Hasil Dari Perhitungan Eclat Akan Menampilkan Nilai Support (Kuatnya kombinasi Item dalam Dataset)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="icon">
+                <img src="{{ url_for('static', filename='assets/images/service-icon-02.png') }}" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="right-content">
+                <h4>Nilai Confidence</h4>
+                <p>Hasil Perhitungan Eclat Akan Menampilkan Confidence (Kuatnya Hubungan Antar Item Dalam Aturan Asosiasi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="icon">
+                <img src="{{ url_for('static', filename='assets/images/service-icon-01.png') }}" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="right-content">
+                <h4>EclaTools</h4>
+                <p>Menu EclaTools Ini Dapat Digunakan Untuk Data Dengan Jumlah Yang Sedikit Hingga Banyak, Pilih Data Dan Klik Proses Datamu</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.7s">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="icon">
+                <img src="{{ url_for('static', filename='assets/images/service-icon-01.png') }}" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="right-content">
+                <h4>Riwayat</h4>
+                <p>Menu Riwayat Akan Menghasilkan Riwayat Data Yang Pernah Dilakukan Pemrosesan Sebelumnya</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.8s">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="icon">
+                <img src="{{ url_for('static', filename='assets/images/service-icon-02.png') }}" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="right-content">
+                <h4>Kolom Data</h4>
+                <p>Kolom data Item Menunjukan Nama Produk, Transaction Menunjukan Nomor Transaksi, dan Kuantitas Menunjukan Banyaknya Item</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%else%}{%endif%}{% endblock %}

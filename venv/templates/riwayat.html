@@ -1,0 +1,42 @@
+{% extends 'layout.html'%}{%block title %} Riwayat {% endblock %}{%block content%}
+<div id="about" class="about-us section">
+  <div class="container">
+    <h4>Riwayat Pengolahan Data</h4>
+    <br> <br>
+    <table class="table table hover table-light">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Tanggal</th>
+          <th scope="col">Nama File</th>
+          <th scope="col">Hasil Eclat</th>
+          <th scope="col">Aksi</div></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for transaction in transactions %}
+        <tr>
+          <th scope="row">{{ loop.index }}</th>
+          <td>{{ transaction.created_at }}</td>
+          <td>{{ transaction.dataset }}</td>
+          <td>{{ transaction.rule }}</td>
+          <td>
+            <a href="http://localhost:5000/delete/{{transaction.id}}" type="button" onclick="return Konfirmasi();"><button class="btn btn-danger btn-xs">Hapus</button></a>
+            <a href="http://localhost:5000/view/{{transaction.id}}" ><button type="button" class="btn btn-success">Detail</button></a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+  function Konfirmasi()
+  {
+    if (confirm('Apakah Anda Yakin Akan Menghapus Data Ini?'))
+      return true;
+    else
+      return false;
+  }
+</script>
+{%endblock %}

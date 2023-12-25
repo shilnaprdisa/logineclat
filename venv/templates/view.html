@@ -1,0 +1,36 @@
+{% extends 'layout.html'%}{%block title %} View {% endblock %}{%block content%}
+<div id="about" class="about-us section">
+  <div class="container">
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #dedddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+    <h4>Hasil Perhitungan Paket Promo Dengan Algoritma Eclat</h4>
+    <br />
+
+    <form action="{% if transaction %}{{ url_for('download', transaction_id=transaction.id) }}{% endif %}" method="post">
+      <button type="submit" class="btn btn-success" {% if not transaction %}disabled{% endif %}>Download</button>
+    </form>
+
+    <div class="hasil">
+      {% if tables %} {% for table in tables %} {{ table|safe }} {% endfor %} {% else %}
+      <p>Tidak ada hasil analisis yang ditampilkan.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{%endblock %}

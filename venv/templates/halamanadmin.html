@@ -1,0 +1,36 @@
+{% extends 'layoutadmin.html'%}{%block title %} Home Admin {% endblock %}{%block content%}
+<div id="about" class="about-us section">
+  <div class="container">
+    <h5><b>Data User</b></h5>
+    <br />
+    <table class="table table hover table-light">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Nama User</th>
+          <th scope="col">Username</th>
+          <th scope="col">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <th scope="row">{{ loop.index }}</th>
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>
+            <a href="http://localhost:5000/deleteuser/{{user.id}}" type="button" onclick="return Konfirmasi();"><button class="btn btn-danger btn-xs">Hapus</button></a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+  function Konfirmasi() {
+    if (confirm('Apakah Anda Yakin Akan Menghapus User Ini?')) return true;
+    else return false;
+  }
+</script>
+{%endblock %}
