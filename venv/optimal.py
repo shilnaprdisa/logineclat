@@ -23,7 +23,7 @@ def hitung_eclatku(file_csv, min_support=0.001):
     supports = []
     confidences = []
     # Menentukan nilai minimum support
-    min_support = 0.001  # Ubah sesuai kebutuhan
+    # min_support = 0.001  # Ubah sesuai kebutuhan
     # Menentukan pasangan item dan menghitung support serta confidence
     for item1, item2 in combinations(itemsets.keys(), 2):
         transactions_item1 = set(itemsets[item1])
@@ -52,4 +52,3 @@ def hitung_eclatku(file_csv, min_support=0.001):
     sorted_df = df_results.sort_values(by=['Support', 'Confidence'], ascending=False)
     # Menampilkan hasil
     return sorted_df
-
