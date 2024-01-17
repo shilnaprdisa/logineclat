@@ -6,7 +6,7 @@ import requests
 
 # Membaca file CSV dari URL
 def hitung_eclatku(file_csv, min_support=0.001):
-    data = pd.read_csv(file_csv)
+    data = pd.read_csv(file_csv)     
     grouped_data = data.groupby('Transaction')['Item'].apply(set).reset_index()
 # Menghitung jumlah transaksi total
     total_transactions = len(grouped_data)

@@ -16,7 +16,7 @@ from passlib.hash import bcrypt
 from sqlalchemy.orm import scoped_session,sessionmaker
 
 app = Flask(__name__)
-app.secret_key = "membuatLOginFlask1"
+app.secret_key = "LOgin21"
 
 app.config['UPLOAD_FOLDER'] = 'uploads' #konfigurasi nama folder upload
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:@localhost/eclatdatabase'
@@ -92,23 +92,6 @@ def register():
         flash("Anda berhasil registrasi, silahkan login","success")
         return redirect(url_for('login'))
     return render_template('register.html')
-        
-    #     usernamedata=db.execute("SELECT username FROM users WHERE username=:username",{"username":username}).fetchone()
-    #     if usernamedata==None:
-    #         if password==confirm:
-    #             db.execute("INSERT INTO users(name,username,password) VALUES(:name,:username,:password)",
-    #     {"name":name,"username":username,"password":secure_password})
-    #             return redirect(url_for('home'))
-    #             flash("Anda berhasil registrasi, silahkan login","success")
-    #             db.commit()
-    #         else :
-    #             flash("Gagal, Username dan Password Tidak Cocok")
-    #             return redirect(url_for('login'))
-    #     else :
-    #         flash("Anda belum terdaftar, silahkan registrasi terlebih dahulu")
-    #         return redirect(url_for('register'))
-    # else: 
-    #     return render_template("login.html")
 
 @app.route('/tampil')
 def tampil():
@@ -129,7 +112,7 @@ def tambah():
                 flash("Data Sudah Ada, Silahkan lihat Menu Riwayat", "danger")
                 return redirect(url_for('tampil'))
             file.save(file_path) #nyimpen file csv
-            rule_df = optimal.hitung_eclatku(file_path) #jalanin libeclatnyaa
+            rule_df = optimal.hitung_eclatku(file_path) #jalanin modelnya
             rule_file_name = f'{os.path.splitext(file_name)[0]}_rule.csv' #hilangin ekstensi + rule
             rule_file_path = os.path.join(app.config['UPLOAD_FOLDER'], rule_file_name)
             rule_df.to_csv(rule_file_path) #csv disimpen ke sini
@@ -152,15 +135,13 @@ def halamanadmin() :
     users = User.query.filter(User.role != "admin").all()#mengambil database user
     return render_template('halamanadmin.html', users=users)  
 
-# @app.route('/tampiluser')
-# def tampiluser() :
-#     users= users.query.all() #mengambil semua data dari tabel transaksi
-#     return render_template('halamanadmin.html', users=users)
-
 @app.route('/riwayat')
 def riwayat() :
-    transactions = Transaction.query.filter_by(id_user=session['id']).all() #mengambil semua data dari tabel transaksi
-    return render_template('riwayat.html', transactions=transactions)
+    if 'id' in session:
+        transactions = Transaction.query.filter_by(id_user=session['id']).all() #mengambil semua data dari tabel transaksi
+        return render_template('riwayat.html', transactions=transactions)
+    else:
+        return redirect(url_for('home'))
 
 @app.route('/delete/<int:id>')
 def delete(id):
