@@ -27,6 +27,7 @@ db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
+#login masih error
 #pembuatan model Transaction
 class User(db.Model, UserMixin): #membuat kelas
     __tablename__= "users" 
