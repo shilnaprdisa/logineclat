@@ -54,14 +54,15 @@ https://templatemo.com/tm-563-seo-dream
               <!-- ***** Logo End ***** -->
               <!-- ***** Menu Start ***** -->
               <ul class="nav">
-                <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
                 {% if current_user.is_authenticated %}
+                <li class="scroll-to-section"><a href="/halamanuser" class="active">Home</a></li>
                 <li class="scroll-to-section"><a href="/tampil">EclaTools</a></li>
                 <li class="scroll-to-section"><a href="/riwayat">Riwayat</a></li>
                 <!-- <li class="scroll-to-section"><a href="/contact"></a></li> -->
                 <li class="scroll-to-section"><a href="/logout">Logout</a></li>
                 <li class="scroll-to-section"><img src="{{ url_for('static', filename='assets/images/logo-icon.png') }}" alt="" /></li>
                 {%else %}
+                <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
                 <li class="scroll-to-section"><a href="/login">Login</a></li>
                 <li class="scroll-to-section"><a href="/register">Register</a></li>
                 <li class="scroll-to-section">

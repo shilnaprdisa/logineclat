@@ -13,17 +13,17 @@ def hitung_eclatku(file_csv, min_support=0.001):
 # Inisialisasi dictionary untuk menyimpan itemset dan transaksi yang mengandung itemset
     itemsets = defaultdict(list)
 # Membuat itemset untuk setiap transaksi
-    for index, row in grouped_data.iterrows():
-        transaction_id = row['Transaction']
-        items = row['Item']
-        for item in items:
+    for index, row in grouped_data.iterrows(): #Membaca berdasarkan index, dilakuan iterasi 
+        transaction_id = row['Transaction'] #transaction id diambil dari kolom transaction
+        items = row['Item'] 
+        for item in items: #untuk setiap item dibuat sebuah set item berdasarkan transaction id
             itemsets[item].append(transaction_id)
     # Inisialisasi list untuk menyimpan pasangan item, support, dan confidence
     rules = []
     supports = []
     confidences = []
     # Menentukan nilai minimum support
-    # min_support = 0.001  # Ubah sesuai kebutuhan
+    # min_support = 0.001
     # Menentukan pasangan item dan menghitung support serta confidence
     for item1, item2 in combinations(itemsets.keys(), 2):
         transactions_item1 = set(itemsets[item1])
