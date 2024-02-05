@@ -977,6 +977,7 @@ Banner Style
   background: -moz-linear-gradient(to right, #fa9d4d 0%, #ff4f6b 100%);
   background: linear-gradient(to right, #fa9d4d 0%, #ff4f6b 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
